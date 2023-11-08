@@ -13,6 +13,11 @@
 #  director_id :integer
 #
 class Movie < ApplicationRecord
+  validates(:director_id, presence: true)
+  validates(:title, uniqueness: true)
+  def director
+  # ...
+end
   def director
     my_director_id = self.director_id
 
